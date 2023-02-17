@@ -42,7 +42,7 @@ public class Main {
     }
 
     public static void printDeadlines(ArrayList<Task> tasksData) {
-        for (Task t : tasksData) {
+        for (Task t : tasksData) { // so dont need variable i to iterate
             if (t instanceof Deadline) {
                 System.out.println(t);
             }
