@@ -47,6 +47,7 @@ public class DataManager {
             throw new IOException();
         }
         ArrayList<String> dataItems = (ArrayList) Files.readAllLines(dataFile.toPath(), Charset.defaultCharset());
+        // readAllLines does everything for you
 
         return dataItems;
     }
@@ -57,7 +58,8 @@ public class DataManager {
             ArrayList<String> dataItems = readFile();
             taskList = parse(dataItems);
         } catch (IOException e) {
-            e.printStackTrace();
+            // e.printStackTrace(); // print this might as well do nothing
+            System.out.println("File access issues. Please check");
         }
         return taskList;
     }
